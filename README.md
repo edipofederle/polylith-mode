@@ -11,7 +11,7 @@ Polylith is a component-based architecture for Clojure projects that separates f
 - Navigate quickly to components and bases within a Polylith workspace
 - Switch seamlessly between source and test files
 - Run build commands (like uberjar) on selected projects
-- Fully customizable directory structure to fit your Polylith workspace setup
+- Customizable directory structure to fit your Polylith workspace setup
 
 ## Installation
 
@@ -60,6 +60,7 @@ The mode is designed to work with Polylith workspaces. You'll need to set the pa
 | `C-c p C` | Jump to components directory |
 | `C-c p u` | Run clojure uberjar command |
 | `C-c t` | Toggle between source and test files |
+| `C-c c p` | Create new Polylith project |
 
 ### Commands
 
@@ -68,9 +69,11 @@ The mode is designed to work with Polylith workspaces. You'll need to set the pa
 - `polylith-mode-jump-to-components-dir`: Open the components directory
 - `polylith-mode-run-clojure-uberjar`: Build an uberjar for a selected project
 - `toggle-between-src-and-test`: Switch between a source file and its corresponding test file
+- `polylith-mode-create-project`: Create a new Polylith project
 
 ## Requirements
 
+- Emacs 25.1 or higher
 - helm 3.0 or higher
 - projectile 2.0 or higher
 

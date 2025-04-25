@@ -170,6 +170,17 @@ Display results in a helm buffer with SOURCE-NAME and BUFFER-NAME."
       (message "Running: %s in %s" command default-directory)
       (async-shell-command command "*Clojure Uberjar*"))))
 
+(defun polylith-mode-create-project ()
+  "Create a new Polylith project with name completion."
+  (interactive)
+  (let* ((project-name (read-string "Project name: "))
+         (command (format "poly create project name:%s" project-name))
+         (default-directory polylith-mode-workspace-directory))
+    (when project-name
+      (message "Running: %s in %s" command default-directory)
+      (async-shell-command command "*Polylith Create Project*"))))
+
+
 (defun toggle-between-src-and-test ()
   (interactive)
   (when (buffer-file-name)
@@ -204,6 +215,7 @@ Display results in a helm buffer with SOURCE-NAME and BUFFER-NAME."
     (define-key map (kbd "C-c p C") 'polylith-mode-jump-to-components-dir)
     (define-key map (kbd "C-c p u") 'polylith-mode-run-clojure-uberjar)
     (define-key map (kbd "C-c t") 'toggle-between-src-and-test)
+    (define-key map (kbd "C-c c p") 'polylith-mode-create-project)
     map)
   "Keymap for Polylith mode.")
 
